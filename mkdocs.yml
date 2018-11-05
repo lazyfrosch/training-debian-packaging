@@ -1,0 +1,13 @@
+site_name: Debian Packaging Training
+#theme: readthedocs
+pages:
+  - Introduction: index.md
+  - Admin Guide:
+    - CLI Tools: admin/index.md
+    - Repositories: admin/repositories.md
+  - Developer Guide:
+    - Build Environment: dev/index.md
+    - Source Package: dev/source.md
+  - About:
+    - References: about/references.md
+    - License: about/license.md

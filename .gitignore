@@ -1,0 +1,6 @@
+## Editors
+.*.sw[op]
+*~
+
+## Mkdocs
+/site/

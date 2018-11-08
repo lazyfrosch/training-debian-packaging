@@ -157,6 +157,21 @@ Or see which package a file belongs to:
 
     dpkg -S /usr/bin/apt
 
+## Online Resources
+
+Debian has web tools to search for packages or bugs in them.
+
+* [Package Search](https://www.debian.org/distrib/packages) or on [packages.d.o](https://packages.debian.org)
+* [Bug Tracker](https://www.debian.org/Bugs/) or [bugs.d.o](https://bugs.debian.org) which is the general issue tracker
+* [Security Tracker](https://security-tracker.debian.org) to search and review security issues by release
+* [News on the website](https://www.debian.org/News/)
+* Mailing lists
+  * [debian-announce](https://lists.debian.org/debian-announce/)
+  * [debian-security-announce](https://lists.debian.org/debian-security-announce/)
+  * [debian-stable-announce](https://lists.debian.org/debian-stable-announce/)
+  * [debian-lts-announce](https://lists.debian.org/debian-lts-announce/)
+  * [other user lists](https://lists.debian.org/users.html)
+
 ## Further documentation
 
 * [man apt](https://manpages.debian.org/stable/apt/apt.8.de.html)

@@ -18,6 +18,7 @@ pages:
   - Developer Guide:
     - Build Environment: dev/index.md
     - Source Package: dev/source.md
+    - Building Packages: dev/building.md
   - About:
     - References: about/references.md
     - License: about/license.md

@@ -176,6 +176,12 @@ file.
 
 [dep3](https://dep-team.pages.debian.net/deps/dep3/) also describes optional metadata for patches.
 
+### `watch`
+
+The watch file is a helper file for [uscan], to automatically check and download available versions of the software.
+
+Debian uses this to check for new versions, but you can often use it to also download a tarball.
+
 ### Other files
 
 Other files can exist and vary in format, the are used by specify [debhelper] add-ons.
@@ -239,3 +245,4 @@ a single commit, and merged to the master branch, which adds files under `debian
 [git-buildpackage]: https://wiki.debian.org/PackagingWithGit
 [man dpkg-src-rules]: https://manpages.debian.org/testing/dpkg-dev/deb-src-rules.5.html
 [man dpkg]: https://manpages.debian.org/testing/dpkg/dpkg.1.html
+[uscan]: https://manpages.debian.org/testing/devscripts/uscan.1.html

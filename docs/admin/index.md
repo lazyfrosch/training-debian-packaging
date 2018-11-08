@@ -125,7 +125,7 @@ After larger updates you can cleanup cached downloads of APT:
     sudo apt clean
 
 **Question:** What is the difference between those commands?
-See [man apt-get](https://manpages.debian.org/stable/apt/apt-get.8.de.html)
+See [man apt-get](https://manpages.debian.org/testing/apt/apt-get.8.de.html)
 
 ### Removing no longer used packages
 
@@ -174,7 +174,7 @@ Debian has web tools to search for packages or bugs in them.
 
 ## Further documentation
 
-* [man apt](https://manpages.debian.org/stable/apt/apt.8.de.html)
-* [man dpkg](https://manpages.debian.org/stable/apt/dpkg.8.de.html)
-* [man apt-get](https://manpages.debian.org/stable/apt/apt-get.8.de.html)
-* [man apt-cache](https://manpages.debian.org/stable/apt/apt-cache.8.de.html)
+* [man apt](https://manpages.debian.org/testing/apt/apt.8.de.html)
+* [man dpkg](https://manpages.debian.org/testing/apt/dpkg.8.de.html)
+* [man apt-get](https://manpages.debian.org/testing/apt/apt-get.8.de.html)
+* [man apt-cache](https://manpages.debian.org/testing/apt/apt-cache.8.de.html)

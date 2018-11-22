@@ -11,7 +11,7 @@ example there is [debuild].
 You can install the build dependencies via APT. This is helpful when you need to re-build a package or want to make
 small modifications.
 
-    apt build-dep icingaweb2
+    sudo apt build-dep icingaweb2
 
 When there are different dependencies in the next package version, you either need to install them manually, or use
 advanced helpers like [pbuilder-satisfydepends](https://wiki.ubuntu.com/PbuilderHowto). (WARNING: This is meant for

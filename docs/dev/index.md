@@ -21,7 +21,7 @@ this is installed automatically as dependency of `devscripts`.
 
 ### debhelper
 
-Since `dpkg-dev` only contains the very basic toolset, `dephelper` brings are lot of automation and simplification
+Since `dpkg-dev` only contains the very basic toolset, `debhelper` brings are lot of automation and simplification
 to the build process. And avoids you taking care about everything.
 
 Just look for `dh_*` manpages.
@@ -32,7 +32,7 @@ Depends on the most basic build tools, like `make` or `gcc`, which you will need
 
 ### dh-make
 
-An optional add-on for quick-starting Debian packages, so to have a basic boilerplate to start with packagaing.
+An optional add-on for quick-starting Debian packages, so to have a basic boilerplate to start with packaging.
 
 ## Online Resources
 

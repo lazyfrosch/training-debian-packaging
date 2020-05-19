@@ -4,7 +4,3 @@
 
 ## Mkdocs
 /site/
-
-## Travis
-/deploy-key
-/deploy-key.pub

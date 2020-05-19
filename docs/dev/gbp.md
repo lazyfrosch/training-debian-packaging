@@ -9,7 +9,7 @@ releases are usually also marked by GIT tags.
 A while ago Debian established GitLab as a central hosting service for all GIT repositories. The service is just named
 Salsa, and is available to everyone to join and contribute.
 
-https://salsa.debian.org
+[salsa.debian.org](https://salsa.debian.org)
 
 ## Repository layouts
 

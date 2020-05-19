@@ -11,16 +11,16 @@ copyright: >-
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
   International License</a>.</p>
 
-pages:
+nav:
   - Introduction: index.md
   - Admin Guide:
-    - CLI Tools: admin/index.md
-    - Repositories: admin/repositories.md
+      - CLI Tools: admin/index.md
+      - Repositories: admin/repositories.md
   - Developer Guide:
-    - Build Environment: dev/index.md
-    - Source Package: dev/source.md
-    - Building Packages: dev/building.md
-    - Using dh_make: dev/dh_make.md
+      - Build Environment: dev/index.md
+      - Source Package: dev/source.md
+      - Building Packages: dev/building.md
+      - Using dh_make: dev/dh_make.md
   - About:
-    - References: about/references.md
-    - License: about/license.md
+      - References: about/references.md
+      - License: about/license.md

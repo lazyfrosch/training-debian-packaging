@@ -21,6 +21,7 @@ nav:
       - Source Package: dev/source.md
       - Building Packages: dev/building.md
       - Using dh_make: dev/dh_make.md
+      - git-buildpackage: dev/gbp.md
   - About:
       - References: about/references.md
       - License: about/license.md

@@ -5,8 +5,8 @@ Ideas to include
 
 * Config files and changes
 
-## Dev Guide
+## Developer Guide
 
 * More on uploading
-* Chroot Builds
+* chroot Builds
 * Release targets and branching

@@ -8,29 +8,29 @@ for Debian packages.
 
     sudo apt install devscripts dpkg-dev build-essential dh-make debhelper
 
-### devscripts
+### `devscripts`
 
 Includes various CLI tools to work with and manipulate a source package, see the description for more details:
 
     apt show devscripts
 
-### dpkg-dev
+### `dpkg-dev`
 
 Brings the `dpkg-*` tools to actually build and assemble the packages,
 this is installed automatically as dependency of `devscripts`.
 
-### debhelper
+### `debhelper`
 
 Since `dpkg-dev` only contains the very basic toolset, `debhelper` brings are lot of automation and simplification
 to the build process. And avoids you taking care about everything.
 
 Just look for `dh_*` manpages.
 
-### build-essential
+### `build-essential`
 
 Depends on the most basic build tools, like `make` or `gcc`, which you will need for the most Unix sources.
 
-### dh-make
+### `dh-make`
 
 An optional add-on for quick-starting Debian packages, so to have a basic boilerplate to start with packaging.
 

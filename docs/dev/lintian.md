@@ -38,5 +38,5 @@ $ lintian --info --display-level pedantic --verbose
 
 ## Further reading
 
-* [man lintian](https://manpages.debian.org/unstable/lintian/lintian.1.en.html)
-* [Debian maintainer guide about lintian](https://www.debian.org/doc/manuals/maint-guide/checkit.en.html#lintians)
+* [`man lintian`](https://manpages.debian.org/unstable/lintian/lintian.1.en.html)
+* [Debian maintainer guide about Lintian](https://www.debian.org/doc/manuals/maint-guide/checkit.en.html#lintians)

@@ -9,7 +9,7 @@ releases are usually also marked by GIT tags.
 A while ago Debian established GitLab as a central hosting service for all GIT repositories. The service is just named
 Salsa, and is available to everyone to join and contribute.
 
-[salsa.debian.org](https://salsa.debian.org)
+[`salsa.debian.org`](https://salsa.debian.org)
 
 ## Repository layouts
 
@@ -19,7 +19,7 @@ A simple GIT repositories will just contain the `debian` directory, plus maybe s
 In this mode you should find a very simple `master` or `debian/master` branch, can just clone it via `git`. But you
 will need to take care of downloading and extracting source code.
 
-This is also used for the [linux Kernel package](https://salsa.debian.org/kernel-team/linux), which only does a simple
+This is also used for the [Linux Kernel package](https://salsa.debian.org/kernel-team/linux), which only does a simple
 layout, because it is easier to handle in terms of repository sizes.
 
 ### Upstream branches
@@ -44,14 +44,14 @@ usage style.
 As optional add-on you often find a `pristine-tar` branch, this branch is used to store metadata, so the original
 tarball can be recreated from the GIT branches.
 
-Please see [man pristine-tar](https://manpages.debian.org/unstable/pristine-tar/pristine-tar.1.en.html) for details.
+Please see [`man pristine-tar`](https://manpages.debian.org/unstable/pristine-tar/pristine-tar.1.en.html) for details.
 
 ## git-buildpackage
 
 Now Debian introduced a small toolkit to work with GIT repositories as source for Debian packages, helping with tasks
 like:
 
-* Cloning a GIT repo (with all gbp related branches)
+* Cloning a GIT repository (with all gbp related branches)
 * Pulling and pushing changes, across multiple branches
 * Building the package while checking with GIT
 * Updating changelog from GIT commits
@@ -100,6 +100,6 @@ Building and changelog integration can also help with the release changelog, git
 ## Further reading
 
 * [gbp manual](https://honk.sigxcpu.org/projects/git-buildpackage/manual-html/gbp.html)
-* [man gbp](https://manpages.debian.org/unstable/git-buildpackage/gbp.1.en.html)
-    * [man gbp-buildpackage](https://manpages.debian.org/unstable/git-buildpackage/gbp-buildpackage.1.en.html)
-    * [man gbp-dch](https://manpages.debian.org/unstable/git-buildpackage/gbp-dch.1.en.html)
+* [`man gbp`](https://manpages.debian.org/unstable/git-buildpackage/gbp.1.en.html)
+    * [`man gbp-buildpackage`](https://manpages.debian.org/unstable/git-buildpackage/gbp-buildpackage.1.en.html)
+    * [`man gbp-dch`](https://manpages.debian.org/unstable/git-buildpackage/gbp-dch.1.en.html)

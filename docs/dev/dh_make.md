@@ -1,5 +1,5 @@
-Using dh_make
-=============
+Using `dh_make`
+===============
 
 `dh_make` is a tool for quick-starting a new package.
 
@@ -30,8 +30,8 @@ $ dh_make -p icingaweb2_2.6.2 -f ../v2.6.2.tar.gz
 
 This leaves you with a collection of defaults and examples:
 
-```
-$ ls -R  debian/
+```bash
+$ ls -R debian/
 debian/:
 changelog  copyright               icingaweb2-docs.docs  manpage.xml.ex  postrm.ex   README.Debian  source
 compat     icingaweb2.cron.d.ex    manpage.1.ex          menu.ex         preinst.ex  README.source  watch.ex

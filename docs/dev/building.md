@@ -14,7 +14,7 @@ small modifications.
     sudo apt build-dep icingaweb2
 
 When there are different dependencies in the next package version, you either need to install them manually, or use
-advanced helpers like [pbuilder-satisfydepends](https://wiki.ubuntu.com/PbuilderHowto). (WARNING: This is meant for
+advanced helpers like [`pbuilder-satisfydepends`](https://wiki.ubuntu.com/PbuilderHowto). (WARNING: This is meant for
 chroot builds)
 
 ## Build a package
@@ -45,8 +45,8 @@ Inside the source tree you will find the typical build artifacts and binaries li
 
 But also inside the `debian/` directory, you will find new files and directories:
 
-* `tmp/` - temporary filetree installed by `dh_auto_install`
-* `<package>/` - filetree for every package
+* `tmp/` - temporary file tree installed by `dh_auto_install`
+* `<package>/` - file tree for every package
 * `<package>.substvars` - replacement variables for `control`
 * `<package>.debhelper.log` - log which debhelper tools have been run for this package
 
@@ -88,13 +88,13 @@ You can always manually edit the file, as long as you keep the basic format.
 When a build is finished the `.dsc` and `.changes` files will be signed by a developer. Those file contains checksums
 for all included files.
 
-With upload tools like [dput-ng] the changes and all dependent files can be uploaded to a repository.
+With upload tools like [`dput-ng`] the changes and all dependent files can be uploaded to a repository.
 
-Most repositores build trust on the signature and will apply a certain release mechanism.
+Most repositories build trust on the signature and will apply a certain release mechanism.
 
 [dpkg-buildpackage]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.5.html
 [dpkg-deb]: https://manpages.debian.org/testing/dpkg/dpkg-deb.1.html
 [debuild]: https://manpages.debian.org/testing/devscripts/debuild.1.html
 [dch]: https://manpages.debian.org/testing/devscripts/dch.1.html
 [gbp-dch]: https://manpages.debian.org/testing/git-buildpackage/gbp-dch.1.html
-[dput-ng]: https://manpages.debian.org/stretch/dput-ng/dput.1.en.html
+[`dput-ng`]: https://manpages.debian.org/stretch/dput-ng/dput.1.en.html

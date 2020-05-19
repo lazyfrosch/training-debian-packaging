@@ -50,7 +50,7 @@ Example of a default `sources.list`:
 Syntax of the lines:
 
 * `deb` (binary packages) or `deb-src` (source packages)
-* URL to access the repostiory
+* URL to access the repository
 * Release (or suite)
 * Components of the repository (e.g. `main` `non-free` `contrib`)
 
@@ -93,7 +93,7 @@ Various other metadata is included in these directories and then references by o
 The main trust-root comes from `Release.gpg`, which signs `Release`,
 all other files are referenced by checksum from there.
 
-Outside of `dists/` it is most common to put the actual packages into `pool/`, the stucture here depends on the
+Outside of `dists/` it is most common to put the actual packages into `pool/`, the structure here depends on the
 repository software used, files are references by URL and checksum from the metadata.
 
 **Task:** Go to a repository and explore:
@@ -103,5 +103,5 @@ repository software used, files are references by URL and checksum from the meta
 
 ## Further reading
 
-* [man apt-secure](https://manpages.debian.org/testing/apt/apt-secure.8.de.html)
-* [man sources.list](https://manpages.debian.org/testing/apt/sources.list.5.de.html)
+* [`man apt-secure`](https://manpages.debian.org/testing/apt/apt-secure.8.de.html)
+* [`man sources.list`](https://manpages.debian.org/testing/apt/sources.list.5.de.html)

@@ -70,7 +70,7 @@ exact state of the package pretty detailed.
     Revision: 2.1 (the dot signals non-maintainer upload)
     Special: +deb8u7 (Release tag for a stable update)
 
-Also there is a "native" format, which means that the package doesn't have a revision since it is a native Debian
+Also there is a "native" format, which means that the package does not have a revision since it is a native Debian
 tool, e.g. devscripts, dpkg.
 
 Versions also can have special operators, which are explained in the
@@ -96,19 +96,19 @@ Main metadata file which defines:
 * Dependencies and other relations
 * Descriptions
 
-See [man deb-control].
+See [`man deb-control`].
 
 ### `changelog`
 
 History of the package, and the released versions. This defines the **current version**.
 
-See [man deb-changelog].
+See [`man deb-changelog`].
 
 ### `rules`
 
-Is a makefile that is called on build to execute the various build steps. For details see [man dpkg-buildpackage].
+Is a makefile that is called on build to execute the various build steps. For details see [`man dpkg-buildpackage`].
 
-The most basic content leaves all for [debhelper] to figure out.
+The most basic content leaves all for [`debhelper`] to figure out.
 
     #!/usr/bin/make -f
     #export DH_VERBOSE=1
@@ -116,7 +116,7 @@ The most basic content leaves all for [debhelper] to figure out.
     %:
             dh $@
 
-Also see [man dpkg-src-rules].
+Also see [`man dpkg-src-rules`].
 
 ### `source/format`
 
@@ -129,7 +129,7 @@ The word `quilt` describes a patch tool.
 
 ### `compat`
 
-Defines the feature compatibility version for [debhelper], this mostly is important when using newer features,
+Defines the feature compatibility version for [`debhelper`], this mostly is important when using newer features,
 or when you want to backport a package to an older Debian release.
 
 It just contains the major version, e.g. `9`.
@@ -156,7 +156,7 @@ Similar files exist:
 * `links` - symlink to create
 * `docs` - files to install under `/usr/share/doc/<package>`
 
-### post and pre scripts
+### `post` and `pre` scripts
 
 Custom scripts can be put here under: `*.post*|*.pre*`
 
@@ -167,7 +167,7 @@ Those scripts are run during certain steps of dpkg bringing packages onto your t
 
 Sometimes debhelper creates or extend those files, so you might see a `##DEBHELPER##` tag in some examples.
 
-Please see [man dpkg] and
+Please see [`man dpkg`] and
 
 ### `patches/`
 
@@ -178,13 +178,13 @@ file.
 
 ### `watch`
 
-The watch file is a helper file for [uscan], to automatically check and download available versions of the software.
+The watch file is a helper file for [`uscan`], to automatically check and download available versions of the software.
 
 Debian uses this to check for new versions, but you can often use it to also download a tarball.
 
 ### Other files
 
-Other files can exist and vary in format, the are used by specify [debhelper] add-ons.
+Other files can exist and vary in format, the are used by a specify [`debhelper`] add-on.
 
 **Lab:** Browse the files of your package and find the following information:
 
@@ -192,14 +192,14 @@ Other files can exist and vary in format, the are used by specify [debhelper] ad
 * What are the build dependencies?
 * What binary packages are built?
 
-## Buildsystems
+## Build systems
 
-[debhelper] builds on other build systems like:
+[`debhelper`] builds on other build systems like:
 
 * configure/make
 * cmake
 * Golang
-* Python setuptools
+* Python `setuptools`
 * Ruby Gem
 * etc.
 
@@ -209,7 +209,7 @@ Where certain steps are common and often need to be configured:
 * `dh_auto_build` that runs the build (e.g. `make`)
 * `dh_auto_install` that install files in a target path (e.g. `make install`)
 
-There are manpages for every [debhelper] tool under `dh_*`.
+There are manpages for every [`debhelper`] tool under `dh_*`.
 
 ## Single vs. Multi-Binary
 
@@ -227,7 +227,7 @@ have metadata like this:
     Vcs-Browser: https://salsa.debian.org/nagios-team/pkg-icingaweb2
     Vcs-Git: https://salsa.debian.org/nagios-team/pkg-icingaweb2.git
 
-When using GIT there are tools like [git-buildpackage] that help with checkout, branching, import and changelog.
+When using GIT there are tools like [`git-buildpackage`] that help with checkout, branching, import and changelog.
 
 You can checkout this repository, which also includes a branch and tags for upstream. Upstream code is updated with
 a single commit, and merged to the master branch, which adds files under `debian/`.
@@ -238,11 +238,11 @@ a single commit, and merged to the master branch, which adds files under `debian
 * See how older versions in the changelog have git hashes
 
 [Debian Developer Keyring]: https://packages.debian.org/stable/debian-keyring
-[debhelper]: https://manpages.debian.org/testing/dpkg-dev/debhelper.5.html
-[man deb-control]: https://manpages.debian.org/testing/dpkg-dev/deb-control.5.html
-[man deb-changelog]: https://manpages.debian.org/testing/dpkg-dev/deb-changelog.5.html
-[man dpkg-buildpackage]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.5.html
-[git-buildpackage]: https://wiki.debian.org/PackagingWithGit
-[man dpkg-src-rules]: https://manpages.debian.org/testing/dpkg-dev/deb-src-rules.5.html
-[man dpkg]: https://manpages.debian.org/testing/dpkg/dpkg.1.html
-[uscan]: https://manpages.debian.org/testing/devscripts/uscan.1.html
+[`debhelper`]: https://manpages.debian.org/testing/dpkg-dev/debhelper.5.html
+[`man deb-control`]: https://manpages.debian.org/testing/dpkg-dev/deb-control.5.html
+[`man deb-changelog`]: https://manpages.debian.org/testing/dpkg-dev/deb-changelog.5.html
+[`man dpkg-buildpackage`]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.5.html
+[`git-buildpackage`]: https://wiki.debian.org/PackagingWithGit
+[`man dpkg-src-rules`]: https://manpages.debian.org/testing/dpkg-dev/deb-src-rules.5.html
+[`man dpkg`]: https://manpages.debian.org/testing/dpkg/dpkg.1.html
+[`uscan`]: https://manpages.debian.org/testing/devscripts/uscan.1.html

@@ -7,3 +7,6 @@
 
 ## Pyspelling
 .wordlist.dic
+
+## markdown-link-check
+node_modules/

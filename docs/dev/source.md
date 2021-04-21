@@ -127,12 +127,17 @@ Defines which source format to expect, there are legacy versions, but usually th
 
 The word `quilt` describes a patch tool.
 
-### `compat`
+### `compat` / `debhelper-compat`
 
-Defines the feature compatibility version for [debhelper], this mostly is important when using newer features,
-or when you want to backport a package to an older Debian release.
+The file `compat` defines the feature compatibility version for [debhelper], this mostly is important when using newer
+features, or when you want to backport a package to an older Debian release. It just contains the major version, e.g. `9`.
 
-It just contains the major version, e.g. `9`.
+In recent versions of debhelper, it is now recommended avoiding `compat`, and instead use a `debhelper-compat`
+build dependency in the `control` file.
+
+    Build-Depends: debhelper-compat (= 13)
+
+See the [debhelper] manpage for details.
 
 ### `copyright`
 

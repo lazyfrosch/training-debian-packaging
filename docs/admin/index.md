@@ -140,6 +140,40 @@ APT can also help you remove no longer needed packages. It knows which packages 
 * APT will give you a notice about no longer required packages on `apt remove pi`
 * `autoremove` will then uninstall the packages after confirmation
 
+### Purging packages
+
+To completely remove a package and its data, you should **purge** it instead of remove.
+This will ensure config and possible other data in `/var` will also be removed, also very helpful for reinstalling
+a package for a fresh start.
+
+    sudo apt purge pi
+    sudo apt remove --purge pi
+
+Also check `dpkg -L <package>` after removing a package to see left over files from the package.
+
+### APT History
+
+A full log of actions with APT is stored in `/var/log/apt/history.log`.
+
+    Start-Date: 2021-04-08  13:54:28
+    Commandline: apt install finger
+    Requested-By: user (1000)
+    Install: finger:amd64 (0.17-17)
+    End-Date: 2021-04-08  13:54:31
+
+This will keep details on installs, upgrades, or any other action for up to 12 months.
+See `/etc/logrotate.d/apt` to change rotation settings.
+
+### Configuration files
+
+DPKG remembers all files installed to `/etc` as config files, it can ask you if you want to keep your changes or
+replace the content on an upgrade.
+
+Upgrade will store the new config as `.dpkg-new` or the old version as`.dpkg-old`,
+depending on your choice.
+
+When a user removed a configuration file completely, it won't be put back, unless you purge and re-install the package.
+
 ### Inspecting with DPKG
 
 DPKG can also give you information about packages that have ever been installed on the local system,

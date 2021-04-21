@@ -92,7 +92,7 @@ With upload tools like [dput-ng] the changes and all dependent files can be uplo
 
 Most repositories build trust on the signature and will apply a certain release mechanism.
 
-[dpkg-buildpackage]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.5.html
+[dpkg-buildpackage]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.1.html
 [dpkg-deb]: https://manpages.debian.org/testing/dpkg/dpkg-deb.1.html
 [debuild]: https://manpages.debian.org/testing/devscripts/debuild.1.html
 [dch]: https://manpages.debian.org/testing/devscripts/dch.1.html

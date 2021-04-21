@@ -243,10 +243,10 @@ a single commit, and merged to the master branch, which adds files under `debian
 * See how older versions in the changelog have git hashes
 
 [Debian Developer Keyring]: https://packages.debian.org/stable/debian-keyring
-[debhelper]: https://manpages.debian.org/testing/dpkg-dev/debhelper.5.html
+[debhelper]: https://manpages.debian.org/testing/debhelper/debhelper.7.html
 [man deb-control]: https://manpages.debian.org/testing/dpkg-dev/deb-control.5.html
 [man deb-changelog]: https://manpages.debian.org/testing/dpkg-dev/deb-changelog.5.html
-[man dpkg-buildpackage]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.5.html
+[man dpkg-buildpackage]: https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.1.html
 [git-buildpackage]: https://wiki.debian.org/PackagingWithGit
 [man dpkg-src-rules]: https://manpages.debian.org/testing/dpkg-dev/deb-src-rules.5.html
 [man dpkg]: https://manpages.debian.org/testing/dpkg/dpkg.1.html

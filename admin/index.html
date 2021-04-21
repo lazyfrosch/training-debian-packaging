@@ -1,0 +1,987 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Markus Frosch <markus.frosch@netways.de>">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>CLI Tools - Debian Packaging Training</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cli-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Debian Packaging Training" class="md-header__button md-logo" aria-label="Debian Packaging Training" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Debian Packaging Training
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CLI Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/lazyfrosch/training-debian-packaging/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Debian Packaging Training" class="md-nav__button md-logo" aria-label="Debian Packaging Training" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Debian Packaging Training
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/lazyfrosch/training-debian-packaging/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Admin Guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Admin Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Admin Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CLI Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CLI Tools
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apt-vs-dpkg" class="md-nav__link">
+    APT vs. DPKG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apt-tools" class="md-nav__link">
+    APT Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-by-example" class="md-nav__link">
+    Learning by example
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning by example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-cache" class="md-nav__link">
+    Update cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-and-inspecting" class="md-nav__link">
+    Searching and inspecting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-a-package" class="md-nav__link">
+    Install a package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-packages" class="md-nav__link">
+    Listing packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-system" class="md-nav__link">
+    Update your system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaning-up-cache" class="md-nav__link">
+    Cleaning up cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-no-longer-used-packages" class="md-nav__link">
+    Removing no longer used packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purging-packages" class="md-nav__link">
+    Purging packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt-history" class="md-nav__link">
+    APT History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    Configuration files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspecting-with-dpkg" class="md-nav__link">
+    Inspecting with DPKG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-resources" class="md-nav__link">
+    Online Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-documentation" class="md-nav__link">
+    Further documentation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="repositories/" class="md-nav__link">
+        Repositories
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Developer Guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/" class="md-nav__link">
+        Build Environment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/source/" class="md-nav__link">
+        Source Package
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/building/" class="md-nav__link">
+        Building Packages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/dh_make/" class="md-nav__link">
+        Using dh_make
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/gbp/" class="md-nav__link">
+        git-buildpackage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/lintian/" class="md-nav__link">
+        Lintian
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        About
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/references/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apt-vs-dpkg" class="md-nav__link">
+    APT vs. DPKG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apt-tools" class="md-nav__link">
+    APT Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-by-example" class="md-nav__link">
+    Learning by example
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning by example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-cache" class="md-nav__link">
+    Update cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-and-inspecting" class="md-nav__link">
+    Searching and inspecting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-a-package" class="md-nav__link">
+    Install a package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-packages" class="md-nav__link">
+    Listing packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-system" class="md-nav__link">
+    Update your system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaning-up-cache" class="md-nav__link">
+    Cleaning up cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-no-longer-used-packages" class="md-nav__link">
+    Removing no longer used packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purging-packages" class="md-nav__link">
+    Purging packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt-history" class="md-nav__link">
+    APT History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    Configuration files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspecting-with-dpkg" class="md-nav__link">
+    Inspecting with DPKG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-resources" class="md-nav__link">
+    Online Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-documentation" class="md-nav__link">
+    Further documentation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lazyfrosch/training-debian-packaging/edit/master/docs/admin/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="cli-tools">CLI Tools</h1>
+<p>There are various CLI tools to interact with packages in Debian, either for installing, upgrading, removing, or
+to interact in more detail with them</p>
+<h2 id="apt-vs-dpkg">APT vs. DPKG</h2>
+<p>The major difference in packaging lies between the purpose of <strong>APT</strong> and <strong>DPKG</strong>.</p>
+<p><strong>DPKG</strong> is the low-lever package manager that takes care about:</p>
+<ul>
+<li>Validating and unpacking a package archive<ul>
+<li>Dependencies</li>
+<li>File ownership</li>
+<li>Consistency</li>
+</ul>
+</li>
+<li>Configuring the package<ul>
+<li>Writing or updating config files</li>
+<li>Starting / controlling services</li>
+<li>Custom scripts</li>
+</ul>
+</li>
+</ul>
+<p><strong>APT</strong> is the main user-CLI interface to work with, it will help you:</p>
+<ul>
+<li>Downloading repository meta-data and validating signatures</li>
+<li>Downloading and installing packages</li>
+<li>Resolving all dependencies and including them in any action</li>
+<li>Updating all packages on your system</li>
+<li>Removing and cleaning up after packages</li>
+</ul>
+<p>Under the hood APT will control DPKG to execute all actions in the proper order.</p>
+<p>Summary: Use APT for the daily business, only touch dpkg when something special needs to be done.</p>
+<h2 id="apt-tools">APT Tools</h2>
+<p>The APT package manager currently has 3 major interfaces.</p>
+<ul>
+<li><strong>apt</strong> which is the simplest CLI tools that offers most of the actions in one binary</li>
+<li><strong>aptitude</strong> offers a CLI based UI to search and manipulate packages on your system</li>
+<li><strong>apt-</strong>* additional APT binaries that are the legacy interface (like <code>apt-get</code> or <code>apt-cache</code>)</li>
+</ul>
+<p>Other graphical interfaces also exist, but we keep working on the command-line here.</p>
+<h2 id="learning-by-example">Learning by example</h2>
+<p>To learn the basics, just try to execute the examples, and follow whats happening on your test system.</p>
+<h3 id="update-cache">Update cache</h3>
+<p>APT has a local cache for all meta-data, this needs to be current so APT knows all packages and can determine what
+is needs to be updated.</p>
+<p>Sometimes this is run automatically in background, but by default on a basic system, it is not.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>You should see:</strong></p>
+<ul>
+<li>Meta data being checked and downloaded from repositories</li>
+<li>Rebuilding of package indices</li>
+<li>Count of packages that can be updated</li>
+</ul>
+<h3 id="searching-and-inspecting">Searching and inspecting</h3>
+<p>You can search the package meta data, with description, regexp or just the package names:</p>
+<pre><code>sudo apt search archimedes constant
+sudo apt search "^pi$"
+sudo apt search --names-only icinga2
+</code></pre>
+<p><strong>You should see:</strong> Listings of known packages matching your search</p>
+<p>To inspect a package in more detail you can use the show command:</p>
+<pre><code>sudo apt show pi
+sudo apt show icinga2
+</code></pre>
+<p><strong>You should see:</strong></p>
+<ul>
+<li>Version and Description</li>
+<li>Dependencies</li>
+<li>Maintainer</li>
+<li>Various other meta data</li>
+</ul>
+<h3 id="install-a-package">Install a package</h3>
+<p>To install a package with all its dependencies you just need to run:</p>
+<pre><code>sudo apt install pi
+</code></pre>
+<p>If dependencies need to be installed, APT will ask you about it.</p>
+<p><strong>You should see:</strong></p>
+<ul>
+<li>APT downloading the package from a remote server</li>
+<li>Installing the packages in the proper order</li>
+<li>Output after downloading is mainly generated by DPKG, which is doing the local work</li>
+</ul>
+<h3 id="listing-packages">Listing packages</h3>
+<p>You can list packages with some filter, for example installed packages, or those available for update.</p>
+<pre><code>sudo apt list --installed
+sudo apt list --upgradable
+</code></pre>
+<h3 id="update-your-system">Update your system</h3>
+<p>To update your system there are two slightly different commands:</p>
+<pre><code>sudo apt upgrade
+sudo apt full-upgrade
+</code></pre>
+<ul>
+<li><code>upgrade</code> is called the safe upgrade, meaning it will update packages while possibly install new dependencies,
+  but never remove anything.</li>
+<li><code>full-upgrade</code> or <code>dist-upgrade</code> was mainly used for running major distribution updates, but it can be used anytime<ul>
+<li>This will in addition to upgrading, also remove obsolete or no longer compatible packages</li>
+</ul>
+</li>
+</ul>
+<p>But no matter which command you use, it will always show you what will be done, and wait for a confirmation.</p>
+<h3 id="cleaning-up-cache">Cleaning up cache</h3>
+<p>After larger updates you can cleanup cached downloads of APT:</p>
+<pre><code>sudo apt autoclean
+sudo apt clean
+</code></pre>
+<p><strong>Question:</strong> What is the difference between those commands?
+See <a href="https://manpages.debian.org/testing/apt/apt-get.8.en.html">man apt-get</a></p>
+<h3 id="removing-no-longer-used-packages">Removing no longer used packages</h3>
+<p>APT can also help you remove no longer needed packages. It knows which packages have been installed manually
+(by user action), and those who were installed for dependency.</p>
+<pre><code>sudo apt remove pi
+sudo apt autoremove
+</code></pre>
+<p><strong>You should see:</strong></p>
+<ul>
+<li>APT will give you a notice about no longer required packages on <code>apt remove pi</code></li>
+<li><code>autoremove</code> will then uninstall the packages after confirmation</li>
+</ul>
+<h3 id="purging-packages">Purging packages</h3>
+<p>To completely remove a package and its data, you should <strong>purge</strong> it instead of remove.
+This will ensure config and possible other data in <code>/var</code> will also be removed, also very helpful for reinstalling
+a package for a fresh start.</p>
+<pre><code>sudo apt purge pi
+sudo apt remove --purge pi
+</code></pre>
+<p>Also check <code>dpkg -L &lt;package&gt;</code> after removing a package to see left over files from the package.</p>
+<h3 id="apt-history">APT History</h3>
+<p>A full log of actions with APT is stored in <code>/var/log/apt/history.log</code>.</p>
+<pre><code>Start-Date: 2021-04-08  13:54:28
+Commandline: apt install finger
+Requested-By: user (1000)
+Install: finger:amd64 (0.17-17)
+End-Date: 2021-04-08  13:54:31
+</code></pre>
+<p>This will keep details on installs, upgrades, or any other action for up to 12 months.
+See <code>/etc/logrotate.d/apt</code> to change rotation settings.</p>
+<h3 id="configuration-files">Configuration files</h3>
+<p>DPKG remembers all files installed to <code>/etc</code> as config files, it can ask you if you want to keep your changes or
+replace the content on an upgrade.</p>
+<p>Upgrade will store the new config as <code>.dpkg-new</code> or the old version as<code>.dpkg-old</code>,
+depending on your choice.</p>
+<p>When a user removed a configuration file completely, it won't be put back, unless you purge and re-install the package.</p>
+<h3 id="inspecting-with-dpkg">Inspecting with DPKG</h3>
+<p>DPKG can also give you information about packages that have ever been installed on the local system,
+or names DPKG has seen in dependencies:</p>
+<pre><code>dpkg -l
+dpkg -l pi
+dpkg -l "lib*"
+</code></pre>
+<p>You can see the contents of a package:</p>
+<pre><code>dpkg -L bash
+</code></pre>
+<p>Or see which package a file belongs to:</p>
+<pre><code>dpkg -S /usr/bin/apt
+</code></pre>
+<h2 id="online-resources">Online Resources</h2>
+<p>Debian has web tools to search for packages or bugs in them.</p>
+<ul>
+<li><a href="https://www.debian.org/distrib/packages">Package Search</a> or on <a href="https://packages.debian.org">packages.d.o</a></li>
+<li><a href="https://www.debian.org/Bugs/">Bug Tracker</a> or <a href="https://bugs.debian.org">bugs.d.o</a> which is the general issue tracker</li>
+<li><a href="https://security-tracker.debian.org">Security Tracker</a> to search and review security issues by release</li>
+<li><a href="https://www.debian.org/News/">News on the website</a></li>
+<li><a href="https://lists.debian.org">Mailing lists</a><ul>
+<li><a href="https://lists.debian.org/debian-announce/">debian-announce</a></li>
+<li><a href="https://lists.debian.org/debian-security-announce/">debian-security-announce</a></li>
+<li><a href="https://lists.debian.org/debian-stable-announce/">debian-stable-announce</a></li>
+<li><a href="https://lists.debian.org/debian-lts-announce/">debian-lts-announce</a></li>
+<li><a href="https://lists.debian.org/users.html">other user lists</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="further-documentation">Further documentation</h2>
+<ul>
+<li><a href="https://manpages.debian.org/testing/apt/apt.8.en.html">man apt</a></li>
+<li><a href="https://manpages.debian.org/testing/dpkg/dpkg.1.en.html">man dpkg</a></li>
+<li><a href="https://manpages.debian.org/testing/apt/apt-get.8.en.html">man apt-get</a></li>
+<li><a href="https://manpages.debian.org/testing/apt/apt-cache.8.en.html">man apt-cache</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="repositories/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Repositories
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <p>Copyright (c) 2018-2021 <a href="mailto:info@netways.de">NETWAYS GmbH</a></p> <p><a href="https://github.com/lazyfrosch/training-debian-packaging">Sourcecode on GitHub</a></p> <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /> </a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>

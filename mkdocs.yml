@@ -11,6 +11,9 @@ copyright: >-
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
   International License</a>.</p>
 
+markdown_extensions:
+  - mdx_truly_sane_lists
+
 nav:
   - Introduction: index.md
   - Admin Guide:

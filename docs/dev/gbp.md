@@ -101,5 +101,5 @@ Building and changelog integration can also help with the release changelog, git
 
 * [gbp manual](https://honk.sigxcpu.org/projects/git-buildpackage/manual-html/gbp.html)
 * [man gbp](https://manpages.debian.org/unstable/git-buildpackage/gbp.1.en.html)
-    * [man gbp-buildpackage](https://manpages.debian.org/unstable/git-buildpackage/gbp-buildpackage.1.en.html)
-    * [man gbp-dch](https://manpages.debian.org/unstable/git-buildpackage/gbp-dch.1.en.html)
+  * [man gbp-buildpackage](https://manpages.debian.org/unstable/git-buildpackage/gbp-buildpackage.1.en.html)
+  * [man gbp-dch](https://manpages.debian.org/unstable/git-buildpackage/gbp-dch.1.en.html)

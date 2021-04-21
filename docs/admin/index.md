@@ -11,13 +11,13 @@ The major difference in packaging lies between the purpose of **APT** and **DPKG
 **DPKG** is the low-lever package manager that takes care about:
 
 * Validating and unpacking a package archive
-    * Dependencies
-    * File ownership
-    * Consistency
+  * Dependencies
+  * File ownership
+  * Consistency
 * Configuring the package
-    * Writing or updating config files
-    * Starting / controlling services
-    * Custom scripts
+  * Writing or updating config files
+  * Starting / controlling services
+  * Custom scripts
 
 **APT** is the main user-CLI interface to work with, it will help you:
 
@@ -113,7 +113,7 @@ To update your system there are two slightly different commands:
 * `upgrade` is called the safe upgrade, meaning it will update packages while possibly install new dependencies,
   but never remove anything.
 * `full-upgrade` or `dist-upgrade` was mainly used for running major distribution updates, but it can be used anytime
-    * This will in addition to upgrading, also remove obsolete or no longer compatible packages
+  * This will in addition to upgrading, also remove obsolete or no longer compatible packages
 
 But no matter which command you use, it will always show you what will be done, and wait for a confirmation.
 
@@ -165,7 +165,7 @@ Debian has web tools to search for packages or bugs in them.
 * [Bug Tracker](https://www.debian.org/Bugs/) or [bugs.d.o](https://bugs.debian.org) which is the general issue tracker
 * [Security Tracker](https://security-tracker.debian.org) to search and review security issues by release
 * [News on the website](https://www.debian.org/News/)
-* Mailing lists
+* [Mailing lists](https://lists.debian.org)
   * [debian-announce](https://lists.debian.org/debian-announce/)
   * [debian-security-announce](https://lists.debian.org/debian-security-announce/)
   * [debian-stable-announce](https://lists.debian.org/debian-stable-announce/)

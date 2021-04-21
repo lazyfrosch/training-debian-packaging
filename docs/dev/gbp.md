@@ -9,7 +9,7 @@ releases are usually also marked by GIT tags.
 A while ago Debian established GitLab as a central hosting service for all GIT repositories. The service is just named
 Salsa, and is available to everyone to join and contribute.
 
-[`salsa.debian.org`](https://salsa.debian.org)
+[salsa.debian.org](https://salsa.debian.org)
 
 ## Repository layouts
 
@@ -44,7 +44,7 @@ usage style.
 As optional add-on you often find a `pristine-tar` branch, this branch is used to store metadata, so the original
 tarball can be recreated from the GIT branches.
 
-Please see [`man pristine-tar`](https://manpages.debian.org/unstable/pristine-tar/pristine-tar.1.en.html) for details.
+Please see [man pristine-tar](https://manpages.debian.org/unstable/pristine-tar/pristine-tar.1.en.html) for details.
 
 ## git-buildpackage
 
@@ -100,6 +100,6 @@ Building and changelog integration can also help with the release changelog, git
 ## Further reading
 
 * [gbp manual](https://honk.sigxcpu.org/projects/git-buildpackage/manual-html/gbp.html)
-* [`man gbp`](https://manpages.debian.org/unstable/git-buildpackage/gbp.1.en.html)
-    * [`man gbp-buildpackage`](https://manpages.debian.org/unstable/git-buildpackage/gbp-buildpackage.1.en.html)
-    * [`man gbp-dch`](https://manpages.debian.org/unstable/git-buildpackage/gbp-dch.1.en.html)
+* [man gbp](https://manpages.debian.org/unstable/git-buildpackage/gbp.1.en.html)
+    * [man gbp-buildpackage](https://manpages.debian.org/unstable/git-buildpackage/gbp-buildpackage.1.en.html)
+    * [man gbp-dch](https://manpages.debian.org/unstable/git-buildpackage/gbp-dch.1.en.html)

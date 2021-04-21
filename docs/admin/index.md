@@ -125,7 +125,7 @@ After larger updates you can cleanup cached downloads of APT:
     sudo apt clean
 
 **Question:** What is the difference between those commands?
-See [`man apt-get`](https://manpages.debian.org/testing/apt/apt-get.8.de.html)
+See [man apt-get](https://manpages.debian.org/testing/apt/apt-get.8.de.html)
 
 ### Removing no longer used packages
 
@@ -166,15 +166,15 @@ Debian has web tools to search for packages or bugs in them.
 * [Security Tracker](https://security-tracker.debian.org) to search and review security issues by release
 * [News on the website](https://www.debian.org/News/)
 * Mailing lists
-  * [`debian-announce`](https://lists.debian.org/debian-announce/)
-  * [`debian-security-announce`](https://lists.debian.org/debian-security-announce/)
-  * [`debian-stable-announce`](https://lists.debian.org/debian-stable-announce/)
-  * [`debian-lts-announce`](https://lists.debian.org/debian-lts-announce/)
+  * [debian-announce](https://lists.debian.org/debian-announce/)
+  * [debian-security-announce](https://lists.debian.org/debian-security-announce/)
+  * [debian-stable-announce](https://lists.debian.org/debian-stable-announce/)
+  * [debian-lts-announce](https://lists.debian.org/debian-lts-announce/)
   * [other user lists](https://lists.debian.org/users.html)
 
 ## Further documentation
 
-* [`man apt`](https://manpages.debian.org/testing/apt/apt.8.de.html)
-* [`man dpkg`](https://manpages.debian.org/testing/apt/dpkg.8.de.html)
-* [`man apt-get`](https://manpages.debian.org/testing/apt/apt-get.8.de.html)
-* [`man apt-cache`](https://manpages.debian.org/testing/apt/apt-cache.8.de.html)
+* [man apt](https://manpages.debian.org/testing/apt/apt.8.de.html)
+* [man dpkg](https://manpages.debian.org/testing/apt/dpkg.8.de.html)
+* [man apt-get](https://manpages.debian.org/testing/apt/apt-get.8.de.html)
+* [man apt-cache](https://manpages.debian.org/testing/apt/apt-cache.8.de.html)

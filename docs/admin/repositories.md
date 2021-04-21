@@ -103,5 +103,5 @@ repository software used, files are references by URL and checksum from the meta
 
 ## Further reading
 
-* [`man apt-secure`](https://manpages.debian.org/testing/apt/apt-secure.8.de.html)
-* [`man sources.list`](https://manpages.debian.org/testing/apt/sources.list.5.de.html)
+* [man apt-secure](https://manpages.debian.org/testing/apt/apt-secure.8.de.html)
+* [man sources.list](https://manpages.debian.org/testing/apt/sources.list.5.de.html)

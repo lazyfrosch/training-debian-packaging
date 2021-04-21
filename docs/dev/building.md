@@ -14,7 +14,7 @@ small modifications.
     sudo apt build-dep icingaweb2
 
 When there are different dependencies in the next package version, you either need to install them manually, or use
-advanced helpers like [`pbuilder-satisfydepends`](https://wiki.ubuntu.com/PbuilderHowto). (WARNING: This is meant for
+advanced helpers like [pbuilder-satisfydepends](https://wiki.ubuntu.com/PbuilderHowto). (WARNING: This is meant for
 chroot builds)
 
 ## Build a package
@@ -88,7 +88,7 @@ You can always manually edit the file, as long as you keep the basic format.
 When a build is finished the `.dsc` and `.changes` files will be signed by a developer. Those file contains checksums
 for all included files.
 
-With upload tools like [`dput-ng`] the changes and all dependent files can be uploaded to a repository.
+With upload tools like [dput-ng] the changes and all dependent files can be uploaded to a repository.
 
 Most repositories build trust on the signature and will apply a certain release mechanism.
 
@@ -97,4 +97,4 @@ Most repositories build trust on the signature and will apply a certain release 
 [debuild]: https://manpages.debian.org/testing/devscripts/debuild.1.html
 [dch]: https://manpages.debian.org/testing/devscripts/dch.1.html
 [gbp-dch]: https://manpages.debian.org/testing/git-buildpackage/gbp-dch.1.html
-[`dput-ng`]: https://manpages.debian.org/stretch/dput-ng/dput.1.en.html
+[dput-ng]: https://manpages.debian.org/stretch/dput-ng/dput.1.en.html
